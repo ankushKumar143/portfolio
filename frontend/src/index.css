@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+body {
+    font-family: "Inter", sans-serif;
+}
+
+.jetbrain {
+    font-family: "JetBrains Mono", monospace;
+}
+
+.monst {
+    font-family: "Montserrat", sans-serif;
+}

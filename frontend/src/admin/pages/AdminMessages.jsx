@@ -5,11 +5,7 @@ const AdminMessages = () => {
     useEffect(() => {
         document.title = "Ankush Kumar | Admin";
     }, []);
-    return (
-        <div className="bg-[#24292E] h-full w-full">
-            <AdminNav />
-        </div>
-    );
+    return <div className="bg-[#24292E] h-full w-full"></div>;
 };
 
 export default AdminMessages;

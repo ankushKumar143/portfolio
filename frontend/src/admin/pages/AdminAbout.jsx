@@ -41,7 +41,6 @@ const AdminAbout = () => {
 
     return (
         <div className="bg-[#24292E] h-full w-full">
-            <AdminNav />
             <div className="p-5 m-9 text-gray-200 leading-[1.35] jetbrain flex flex-col">
                 <input
                     className="border-none outline-none"

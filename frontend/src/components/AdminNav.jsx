@@ -7,8 +7,13 @@ import jsLogo from "../assets/jslogo.svg";
 import markdown from "../assets/markdown.svg";
 
 const AdminNav = () => {
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        window.location.reload();
+    };
+
     return (
-        <nav className="bg-[#1F2428]">
+        <nav className="bg-[#1F2428] flex justify-between">
             <ul className="flex text-gray-200">
                 <li>
                     <NavLink
@@ -80,6 +85,12 @@ const AdminNav = () => {
                     </NavLink>
                 </li>
             </ul>
+            <button
+                onClick={handleLogout}
+                className="py-1.5 px-6 w-35 bg-[#F7816B] text-[#EEEEEE] hover:shadow-[8px_8px_16px_rgba(0,0,0,0.45)] font-semibold"
+            >
+                Log Out
+            </button>
         </nav>
     );
 };

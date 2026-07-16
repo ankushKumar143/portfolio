@@ -1,4 +1,5 @@
 const express = require("express");
+const authMiddleware = require("../middleware/auth.middleware");
 const upload = require("../middleware/upload.middleware");
 const {
     getProjects,
@@ -10,8 +11,8 @@ const {
 const router = express.Router();
 
 router.get("/", getProjects);
-router.post("/", upload.single("image"), createProject);
-router.patch("/:id", upload.single("image"), updateProject);
-router.delete("/:id", deleteProject);
+router.post("/", authMiddleware, upload.single("image"), createProject);
+router.patch("/:id", authMiddleware, upload.single("image"), updateProject);
+router.delete("/:id", authMiddleware, deleteProject);
 
 module.exports = router;

@@ -8,7 +8,7 @@ import markdown from "../assets/markdown.svg";
 
 const Navbar = () => {
     return (
-        <nav className="bg-[#1F2428]">
+        <nav className="bg-[#1F2428] sticky top-0 z-50">
             <ul className="flex text-gray-200">
                 <li>
                     <NavLink

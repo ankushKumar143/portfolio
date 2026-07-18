@@ -4,6 +4,7 @@ const cors = require("cors");
 const aboutRoute = require("./routes/about.route");
 const projectsRoute = require("./routes/projects.route");
 const loginRoute = require("./routes/auth.route");
+const messageRoute = require("./routes/message.route");
 
 app.use(
     cors({
@@ -15,5 +16,6 @@ app.use(express.json());
 app.use("/api/about", aboutRoute);
 app.use("/api/projects", projectsRoute);
 app.use("/api/auth", loginRoute);
+app.use("/api/messages", messageRoute);
 
 module.exports = app;

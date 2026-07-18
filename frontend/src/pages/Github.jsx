@@ -14,6 +14,10 @@ const Github = () => {
     const [sortBy, setSortBy] = useState("updated");
 
     useEffect(() => {
+        document.title = "Ankush Kumar | Github";
+    }, []);
+
+    useEffect(() => {
         const fetchRepos = async () => {
             try {
                 const response = await fetch(

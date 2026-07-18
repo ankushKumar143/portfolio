@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import AdminNav from "../../components/AdminNav";
-import { use } from "react";
 
 const AdminAbout = () => {
     const [title, setTitle] = useState("");
@@ -26,6 +25,7 @@ const AdminAbout = () => {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
             body: JSON.stringify({ title, content }),
         });

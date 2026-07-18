@@ -1,20 +1,57 @@
-import React from "react";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const Card = ({ project }) => {
     return (
-        <div className="h-120 w-75 rounded-b-3xl bg-[#1F2428]">
+        <div className="w-[320px] overflow-hidden rounded-2xl border border-[#30363D] bg-[#1F2428] transition-all duration-300 hover:-translate-y-2 hover:border-[#F78166] hover:shadow-xl">
             <img
                 src={project.image}
                 alt={project.title}
-                className="h-37.5 w-75 object-cover"
-            ></img>
-            <div className="px-5 py-3 leading-[1.3]">
-                <h2 className="text-[21px] mb-3 font-semibold text-gray-200">
+                className="h-48 w-full object-cover"
+            />
+
+            <div className="flex h-[300px] flex-col p-5">
+                <h2 className="mb-3 text-2xl font-semibold text-white">
                     {project.title}
                 </h2>
-                <p className="text-[14px] text-gray-200">
+
+                <p className="mb-5 line-clamp-4 text-sm leading-6 text-gray-300">
                     {project.description}
                 </p>
+
+                <div className="mb-5 flex flex-wrap gap-2">
+                    {project.techStack?.map((tech) => (
+                        <span
+                            key={tech}
+                            className="rounded-full bg-[#30363D] px-3 py-1 text-xs font-medium text-[#58A6FF]"
+                        >
+                            {tech}
+                        </span>
+                    ))}
+                </div>
+
+                <div className="mt-auto flex gap-3">
+                    <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-[#30363D] px-4 py-2 text-white transition hover:bg-[#484F58]"
+                    >
+                        <FaGithub />
+                        GitHub
+                    </a>
+
+                    {project.liveUrl && (
+                        <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-[#F78166] px-4 py-2 font-semibold text-black transition hover:opacity-90"
+                        >
+                            <FaExternalLinkAlt />
+                            Live
+                        </a>
+                    )}
+                </div>
             </div>
         </div>
     );

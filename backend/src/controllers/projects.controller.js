@@ -12,6 +12,11 @@ const getProjects = async (req, res) => {
 
 const createProject = async (req, res) => {
     try {
+        if (!req.file) {
+            return res.status(400).json({
+                message: "Project image is required",
+            });
+        }
         const { title, description, techStack, githubUrl, liveUrl } = req.body;
         const result = await uploadImage(req.file.buffer);
         const image = result.secure_url;

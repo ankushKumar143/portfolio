@@ -54,17 +54,20 @@ const AdminProjects = () => {
 
     const handleSave = async () => {
         try {
-            const response = await fetch("http://localhost:3000/api/about", {
-                method: "PATCH",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${localStorage.getItem("token")}`,
+            const response = await fetch(
+                `${import.meta.env.VITE_API_URL}/api/projects`,
+                {
+                    method: "PATCH",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${localStorage.getItem("token")}`,
+                    },
+                    body: JSON.stringify({
+                        title,
+                        content,
+                    }),
                 },
-                body: JSON.stringify({
-                    title,
-                    content,
-                }),
-            });
+            );
 
             const data = await response.json();
 

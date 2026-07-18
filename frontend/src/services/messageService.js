@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3000/api/messages";
+const API_URL = `${import.meta.env.VITE_API_URL}/api/messages`;
 
 export const sendMessage = async (formData) => {
     const response = await axios.post(API_URL, formData);

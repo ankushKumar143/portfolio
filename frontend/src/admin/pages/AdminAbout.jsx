@@ -12,7 +12,9 @@ const AdminAbout = () => {
 
     useEffect(() => {
         const fetchAbout = async () => {
-            const response = await fetch("http://localhost:3000/api/about");
+            const response = await fetch(
+                `${import.meta.env.VITE_API_URL}/api/about`,
+            );
             const data = await response.json();
             setTitle(data.title);
             setContent(data.content);
@@ -21,14 +23,17 @@ const AdminAbout = () => {
     }, []);
 
     const handleSave = async () => {
-        const response = await fetch("http://localhost:3000/api/about", {
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${localStorage.getItem("token")}`,
+        const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/api/about`,
+            {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+                body: JSON.stringify({ title, content }),
             },
-            body: JSON.stringify({ title, content }),
-        });
+        );
         const data = await response.json();
         console.log(data);
         if (response.ok) {

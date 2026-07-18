@@ -11,7 +11,7 @@ const Contact = () => {
         {
             key: "website",
             value: "ankush.vercel.app",
-            href: "https://ankush.vercel.app",
+            href: "https://ankushkumar143.netlify.app",
         },
         {
             key: "email",

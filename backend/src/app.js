@@ -8,7 +8,7 @@ const messageRoute = require("./routes/message.route");
 
 app.use(
     cors({
-        origin: "http://localhost:5173",
+        origin: ["http://localhost:5173", "ankushkumar143.netlify.app"],
     }),
 );
 app.use(express.json());

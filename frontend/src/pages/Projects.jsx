@@ -21,7 +21,7 @@ const Projects = () => {
     return (
         <div className="bg-[#24292E] h-full w-full">
             <Navbar />
-            <div className="p-9 jetbrain">
+            <div className=" m-8 leading-[1.35] jetbrain">
                 <h2 className="text-[21px] font-semibold text-gray-200">
                     Stuff I've Built So Far
                 </h2>

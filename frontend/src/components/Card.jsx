@@ -2,19 +2,19 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const Card = ({ project }) => {
     return (
-        <div className="w-[320px] overflow-hidden rounded-2xl border border-[#30363D] bg-[#1F2428] transition-all duration-300 hover:-translate-y-2 hover:border-[#F78166] hover:shadow-xl">
+        <div className="w-[305px]  min-h-75 overflow-hidden rounded-b-2xl border border-[#30363D] bg-[#1F2428] transition-all duration-300 hover:-translate-y-2 hover:border-[#F78166] hover:shadow-xl">
             <img
                 src={project.image}
                 alt={project.title}
-                className="h-48 w-full object-cover"
+                className="h-38 w-full object-cover"
             />
 
-            <div className="flex h-[300px] flex-col p-5">
-                <h2 className="mb-3 text-2xl font-semibold text-white">
+            <div className="flex flex-col p-5">
+                <h2 className="mb-1 text-xl font-semibold text-white">
                     {project.title}
                 </h2>
 
-                <p className="mb-5 line-clamp-4 text-sm leading-6 text-gray-300">
+                <p className="mb-5 text-sm leading-[1.3] text-gray-300">
                     {project.description}
                 </p>
 

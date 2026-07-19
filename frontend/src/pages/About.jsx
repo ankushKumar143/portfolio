@@ -10,7 +10,7 @@ const About = () => {
 
     useEffect(() => {
         const fetchAbout = async () => {
-            const response = await fetch("http://localhost:3000/api/about");
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/about`);
             const data = await response.json();
             setAbout(data);
         };

@@ -13,6 +13,7 @@ const AdminProjects = () => {
     const [loading, setLoading] = useState(true);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [editingProject, setEditingProject] = useState(null);
+    const [saved, setSaved] = useState(false);
 
     useEffect(() => {
         document.title = "Ankush Kumar | Admin";
@@ -52,39 +53,27 @@ const AdminProjects = () => {
         }
     };
 
-    const handleSave = async () => {
+    const handleSave = async (data) => {
         try {
-            const response = await fetch(
-                `${import.meta.env.VITE_API_URL}/api/projects`,
-                {
-                    method: "PATCH",
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: `Bearer ${localStorage.getItem("token")}`,
-                    },
-                    body: JSON.stringify({
-                        title,
-                        content,
-                    }),
-                },
-            );
-
-            const data = await response.json();
-
-            console.log(response.status);
-            console.log(data);
-
-            if (!response.ok) {
-                throw new Error(data.message);
+            if (editingProject) {
+                await updateProject(editingProject._id, data);
+            } else {
+                await createProject(data);
             }
+
+            await fetchProjects();
+
+            setIsModalOpen(false);
+            setEditingProject(null);
 
             setSaved(true);
 
             setTimeout(() => {
                 setSaved(false);
             }, 5000);
-        } catch (err) {
-            console.error(err);
+        } catch (error) {
+            console.error(error);
+            alert("Failed to save project.");
         }
     };
 

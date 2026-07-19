@@ -36,7 +36,7 @@ const App = () => {
             >
                 <div
                     className="w-full
-                  h-8.5
+                  h-7
                   bg-[#1F2428]
                   flex
                   text-white
@@ -46,7 +46,7 @@ const App = () => {
                   border-[#151618]
                 "
                 >
-                    <div className="ml-3 text-[15px] flex items-center gap-4.5">
+                    <div className="ml-3 text-[13px] flex items-center gap-4.5">
                         <img
                             src={vslogo}
                             alt="vslogo"
@@ -95,42 +95,42 @@ const App = () => {
                         </Routes>
                     </div>
                 </div>
-                <div className="w-full h-7 bg-[#24292E] border-t border-[#151618] flex justify-between">
+                <div className="w-full h-6 bg-[#24292E] border-t border-[#151618] flex justify-between">
                     <div className="flex items-center">
                         <a
                             href="https://github.com/ankushkumar143/"
-                            className="flex items-center gap-1 ml-5 text-gray-200  hover:text-white cursor-pointer"
+                            className="flex items-center gap-1 ml-3 text-gray-200  hover:text-white cursor-pointer"
                         >
-                            <VscSourceControl className="w-4 h-4" />
-                            <span className="text-sm">main</span>
+                            <VscSourceControl className="w-3.5 h-3.5" />
+                            <span className="text-[13px]">main</span>
                         </a>
-                        <div className="flex items-center text-gray-200 ml-5 gap-1 hover:text-white cursor-pointer">
-                            <VscError className="w-4 h-4 " />
-                            <span className="text-sm">0</span>
+                        <div className="flex items-center text-gray-200 ml-3 gap-1 hover:text-white cursor-pointer">
+                            <VscError className="w-3.5 h-3.5" />
+                            <span className="text-[13px]">0</span>
                         </div>
                         <div className="flex items-center text-gray-200 ml-3 gap-1 hover:text-white cursor-pointer">
-                            <VscWarning className="w-4 h-4 " />
-                            <span className="text-sm">0</span>
+                            <VscWarning className="w-3.5 h-3.5" />
+                            <span className="text-[13px]">0</span>
                         </div>
                     </div>
                     <div className="flex items-center">
-                        <div className="flex items-center text-gray-200 hover:text-white mr-5 gap-2">
-                            <span>{"{ }"}</span>
-                            <span className="text-sm">JavaScript JSX</span>
+                        <div className="flex items-center text-gray-200 hover:text-white mr-3 gap-2">
+                            <span className="text-[13px]">{"{ }"}</span>
+                            <span className="text-[13px]">JavaScript JSX</span>
                         </div>
-                        <div className="flex items-center text-gray-200 hover:text-white mr-5 gap-1">
-                            <FaBroadcastTower className="w-4 h-4 cursor-pointer" />
-                            <span className="text-sm">Go Live</span>
+                        <div className="flex items-center text-gray-200 hover:text-white mr-3 gap-1">
+                            <FaBroadcastTower className="w-3.5 h-3.5 cursor-pointer" />
+                            <span className="text-[13px]">Go Live</span>
                         </div>
-                        <div className="flex items-center text-gray-200 hover:text-white mr-5 gap-1">
+                        <div className="flex items-center text-gray-200 hover:text-white mr-3 gap-1">
                             <img
                                 src={dtick}
                                 alt="dtick"
-                                className="w-6 h-6 object-contain"
+                                className="w-5 h-5 object-contain"
                             />
-                            <span className="text-sm">Prettier</span>
+                            <span className="text-[13px]">Prettier</span>
                         </div>
-                        <VscBell className="w-4 h-4 text-gray-200 hover:text-white cursor-pointer font-bold mr-5" />
+                        <VscBell className="w-4 h-4 text-gray-200 hover:text-white cursor-pointer font-bold mr-3" />
                     </div>
                 </div>
             </div>
